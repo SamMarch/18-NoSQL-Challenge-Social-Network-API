@@ -1,4 +1,3 @@
-const { ObjectId } = require("mongoose").Types;
 const { User, Thought } = require("../models");
 
 getUsers = (req, res) => {
@@ -96,4 +95,14 @@ deleteFriend = (req, res) => {
   )
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => res.json(err));
+};
+
+module.exports = {
+  getUsers,
+  getSingleUser,
+  createUser,
+  updateUser,
+  deleteUser,
+  addFriend,
+  deleteFriend,
 };
